@@ -20,6 +20,9 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
+<!-- Preload hero LCP image -->
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" fetchpriority="high">
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Atelier Forma">
@@ -279,10 +282,84 @@ img { display: block; }
   .ax-loader { display: none; }
   .reveal, [data-reveal], .timeline-bar { opacity: 1 !important; transform: none !important; }
 }
+
+/* ── Accessibility ── */
+.skip-link {
+  position: fixed; top: 12px; left: 12px; z-index: 300;
+  transform: translateY(-160%);
+  background: var(--cream); color: var(--bg);
+  padding: 10px 18px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  transition: transform .3s var(--ease);
+}
+.skip-link:focus { transform: translateY(0); outline: none; }
+:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+a:focus-visible, button:focus-visible { outline-offset: 4px; }
+
+/* ── Sticky header legibility on scroll ── */
+#site-header { transition: background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease); border-bottom: 1px solid transparent; }
+#site-header.is-scrolled {
+  background: rgba(20, 17, 13, 0.72);
+  backdrop-filter: blur(14px);
+  border-bottom-color: var(--line);
+}
+
+/* Section anchors clear the fixed header */
+main section[id] { scroll-margin-top: 84px; }
+
+/* Clickable project cards */
+.archive-card { cursor: pointer; }
+.card-link { position: absolute; inset: 0; z-index: 20; }
+.archive-card .view-cue {
+  opacity: 0; transform: translateY(6px);
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
+}
+.archive-card:hover .view-cue, .archive-card:focus-within .view-cue { opacity: 1; transform: translateY(0); }
+
+/* Masked number — guaranteed legibility fallback */
+.masked-number {
+  -webkit-text-stroke: 1px rgba(181, 138, 82, 0.35);
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* ── Contact form ── */
+.field { position: relative; margin-bottom: 18px; }
+.field label {
+  display: block; margin-bottom: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(242, 236, 225, 0.62);
+}
+.field input, .field select, .field textarea {
+  width: 100%; background: rgba(242, 236, 225, 0.04);
+  border: 1px solid var(--line); border-radius: 16px;
+  padding: 14px 16px; color: var(--cream);
+  font-family: Inter, sans-serif; font-size: 14px;
+  transition: border-color .3s var(--ease), background .3s var(--ease);
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.field select { appearance: none; -webkit-appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23b58a52' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center;
+}
+.field input::placeholder, .field textarea::placeholder { color: rgba(242, 236, 225, 0.32); }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: rgba(181, 138, 82, 0.55); background: rgba(242, 236, 225, 0.06);
+}
+.field input:user-invalid, .field textarea:user-invalid, .field select:user-invalid {
+  border-color: rgba(179, 90, 60, 0.7);
+}
+.form-status { min-height: 20px; font-size: 13px; font-weight: 600; }
+.form-status.ok { color: var(--oak); }
+.form-status.err { color: #d98a6a; }
 </style>
 </head>
 
 <body>
+  <a href="#home" class="skip-link">Skip to content</a>
   <div class="noise" aria-hidden="true"></div>
   <div class="grid-veil" aria-hidden="true"></div>
   <div class="page-rail" aria-hidden="true">Atelier Forma / Interior Architecture</div>
@@ -302,7 +379,7 @@ img { display: block; }
     </div>
   </div>
 
-  <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-5 md:px-8 lg:px-12">
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-5 md:px-8 lg:px-12">
     <a href="#home" class="display text-xl font-medium tracking-[-0.02em] text-[#f2ece1] md:text-2xl">
       Atelier&nbsp;Forma
     </a>
@@ -360,7 +437,7 @@ img { display: block; }
         </div>
 
         <div class="hero-card absolute inset-0 rotate-[4deg] overflow-hidden rounded-[20px] bg-[#1c150f]">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="A light-filled residential interior with warm timber and stone, designed by Atelier Forma" class="h-full w-full object-cover" style="filter:saturate(.9) brightness(.98)">
+          <img loading="eager" fetchpriority="high" decoding="async" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="A light-filled residential interior with warm timber and stone, designed by Atelier Forma" class="h-full w-full object-cover" style="filter:saturate(.9) brightness(.98)">
           <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10"></div>
         </div>
 
@@ -416,7 +493,7 @@ img { display: block; }
     <!-- ═══════════ SERVICES ═══════════ -->
     <section id="services" class="services-section relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Services">
       <div class="absolute left-1/2 top-0 h-[360px] w-[78%] -translate-x-1/2 overflow-hidden rounded-b-[32px] border-x border-b border-[#f2ece1]/10 md:h-[480px] lg:h-[600px]">
-        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80" alt="Concrete and glass architectural volume in natural light" class="strip-image h-full w-full object-cover object-center opacity-70">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80" alt="Concrete and glass architectural volume in natural light" class="strip-image h-full w-full object-cover object-center opacity-70">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#14110d]/20 to-[#14110d]"></div>
       </div>
 
@@ -489,11 +566,11 @@ img { display: block; }
     <!-- ═══════════ AWARDS & RECOGNITION ═══════════ -->
     <section id="awards" class="numbers-intro relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Awards and recognition">
       <figure class="parallax-image parallax-slow pointer-events-none right-4 top-32 h-28 w-40 rotate-[7deg] md:right-8 md:top-28 md:h-48 md:w-72">
-        <img src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?auto=format&fit=crop&w=1200&q=80" alt="Architectural detail of a concrete stair">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?auto=format&fit=crop&w=1200&q=80" alt="Architectural detail of a concrete stair">
       </figure>
 
       <figure class="parallax-image parallax-fast pointer-events-none bottom-24 left-4 h-24 w-36 rotate-[-9deg] md:bottom-20 md:left-10 md:h-40 md:w-60">
-        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" alt="Sculptural concrete architecture in daylight">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" alt="Sculptural concrete architecture in daylight">
       </figure>
 
       <div class="grid min-h-screen items-center gap-12 md:grid-cols-12">
@@ -539,52 +616,62 @@ img { display: block; }
 
       <div class="archive-gallery mt-20 flex gap-5 will-change-transform">
         <figure class="archive-card group relative h-[420px] w-[320px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[560px] md:w-[420px]">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Villa Serena — a serene living room in oak and travertine" class="h-full w-full object-cover">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Villa Serena — a serene living room in oak and travertine" class="h-full w-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <a class="card-link" href="/projects/villa-serena" aria-label="View Villa Serena case study"></a>
           <figcaption class="absolute bottom-6 left-6 right-6">
             <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Private Residence · Como, Italy</p>
             <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Villa Serena</h3>
             <p class="mt-1 text-xs text-[#f2ece1]/55">2023 · 640 m² · Oak, Travertine</p>
+          <p class="view-cue mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b58a52]">View project <span aria-hidden="true">↗</span></p>
           </figcaption>
         </figure>
 
         <figure class="archive-card group relative mt-20 h-[360px] w-[300px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[460px] md:w-[360px]">
-          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Penthouse Aria — a sculptural bedroom framed in stone" class="h-full w-full object-cover">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Penthouse Aria — a sculptural bedroom framed in stone" class="h-full w-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <a class="card-link" href="/projects/penthouse-aria" aria-label="View Penthouse Aria case study"></a>
           <figcaption class="absolute bottom-6 left-6 right-6">
             <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Penthouse · Milan, Italy</p>
             <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Penthouse Aria</h3>
             <p class="mt-1 text-xs text-[#f2ece1]/55">2022 · 410 m² · Marble, Bronze</p>
+          <p class="view-cue mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b58a52]">View project <span aria-hidden="true">↗</span></p>
           </figcaption>
         </figure>
 
         <figure class="archive-card group relative h-[420px] w-[320px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[560px] md:w-[420px]">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Maison Lumière — a boutique hotel lobby in concrete and warm light" class="h-full w-full object-cover">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Maison Lumière — a boutique hotel lobby in concrete and warm light" class="h-full w-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <a class="card-link" href="/projects/maison-lumiere" aria-label="View Maison Lumière case study"></a>
           <figcaption class="absolute bottom-6 left-6 right-6">
             <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Boutique Hotel · Kyoto, Japan</p>
             <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Maison Lumière</h3>
             <p class="mt-1 text-xs text-[#f2ece1]/55">2024 · 2,100 m² · Concrete, Cedar</p>
+          <p class="view-cue mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b58a52]">View project <span aria-hidden="true">↗</span></p>
           </figcaption>
         </figure>
 
         <figure class="archive-card group relative mt-28 h-[360px] w-[300px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[460px] md:w-[360px]">
-          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80" alt="Casa Oliva — a luxury villa opening onto a reflecting pool" class="h-full w-full object-cover">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80" alt="Casa Oliva — a luxury villa opening onto a reflecting pool" class="h-full w-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <a class="card-link" href="/projects/casa-oliva" aria-label="View Casa Oliva case study"></a>
           <figcaption class="absolute bottom-6 left-6 right-6">
             <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Luxury Villa · Ibiza, Spain</p>
             <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Casa Oliva</h3>
             <p class="mt-1 text-xs text-[#f2ece1]/55">2023 · 880 m² · Limestone, Olive Wood</p>
+          <p class="view-cue mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b58a52]">View project <span aria-hidden="true">↗</span></p>
           </figcaption>
         </figure>
 
         <figure class="archive-card group relative h-[420px] w-[320px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[560px] md:w-[420px]">
-          <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=80" alt="Restaurant Cor — an intimate dining room in charcoal and brass" class="h-full w-full object-cover">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=80" alt="Restaurant Cor — an intimate dining room in charcoal and brass" class="h-full w-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <a class="card-link" href="/projects/restaurant-cor" aria-label="View Restaurant Cor case study"></a>
           <figcaption class="absolute bottom-6 left-6 right-6">
             <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Restaurant · Copenhagen, Denmark</p>
             <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Restaurant Cor</h3>
             <p class="mt-1 text-xs text-[#f2ece1]/55">2021 · 320 m² · Charcoal Oak, Brass</p>
+          <p class="view-cue mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b58a52]">View project <span aria-hidden="true">↗</span></p>
           </figcaption>
         </figure>
       </div>
@@ -605,8 +692,8 @@ img { display: block; }
         <div class="relative md:col-span-7 md:col-start-4">
           <div class="relative flex min-h-[520px] items-center justify-center">
             <span class="masked-number display text-[13rem] font-medium leading-none tracking-[-0.03em] md:text-[24rem] lg:text-[28rem]" style="--number-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&amp;fit=crop&amp;w=1600&amp;q=90')">40</span>
-            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" alt="Interior detail of a warm minimal kitchen" class="project-card absolute left-0 top-14 hidden h-44 w-72 rotate-[-14deg] rounded-[18px] border border-[#f2ece1]/10 object-cover md:block">
-            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80" alt="A modern home at dusk with warm interior light" class="project-card absolute right-4 top-6 hidden h-44 w-72 rotate-[10deg] rounded-[18px] border border-[#f2ece1]/10 object-cover md:block">
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" alt="Interior detail of a warm minimal kitchen" class="project-card absolute left-0 top-14 hidden h-44 w-72 rotate-[-14deg] rounded-[18px] border border-[#f2ece1]/10 object-cover md:block">
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80" alt="A modern home at dusk with warm interior light" class="project-card absolute right-4 top-6 hidden h-44 w-72 rotate-[10deg] rounded-[18px] border border-[#f2ece1]/10 object-cover md:block">
           </div>
         </div>
 
@@ -624,7 +711,7 @@ img { display: block; }
       </h2>
 
       <figure class="parallax-image parallax-slow pointer-events-none absolute right-5 top-28 hidden h-44 w-72 rotate-[5deg] overflow-hidden rounded-[28px] border border-[#f2ece1]/10 md:block lg:right-14 lg:h-56 lg:w-96">
-        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" alt="Detail of a stone stair and timber handrail" class="h-full w-full object-cover">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" alt="Detail of a stone stair and timber handrail" class="h-full w-full object-cover">
       </figure>
 
       <div class="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center">
@@ -653,7 +740,7 @@ img { display: block; }
           </article>
 
           <article class="note-card group relative min-h-[430px] overflow-hidden rounded-[38px] border border-[#f2ece1]/10 bg-[#181410] md:col-span-4">
-            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80" alt="Warm timber and glass in a modern home" class="h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-90">
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80" alt="Warm timber and glass in a modern home" class="h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-90">
             <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-[#14110d]/25 to-transparent"></div>
             <div class="absolute bottom-7 left-7 right-7">
               <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/55">02 / Timber</p>
@@ -700,7 +787,7 @@ img { display: block; }
     <!-- ═══════════ DESIGN PROCESS ═══════════ -->
     <section id="process" class="process-section relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Design process">
       <figure class="parallax-image parallax-slow pointer-events-none right-4 top-24 h-28 w-44 rotate-[4deg] md:right-8 md:top-20 md:h-56 md:w-80">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="A minimalist white residence at golden hour">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="A minimalist white residence at golden hour">
       </figure>
 
       <div data-reveal="" class="mb-16 max-w-2xl">
@@ -753,7 +840,7 @@ img { display: block; }
             </div>
             <h3 class="display text-4xl font-medium leading-[1.02] tracking-[-0.02em] md:text-5xl">The Slow Patina of Bronze</h3>
             <p class="mt-6 max-w-xl text-sm font-medium leading-[1.7] text-[#f2ece1]/58">Why we specify living metals that darken and warm with touch — and how a surface earns its character over the first ten years of use.</p>
-            <a href="#" class="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]">Read the essay <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+            <a href="/journal/the-slow-patina-of-bronze" class="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]">Read the essay <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
           </article>
 
           <article class="pricing-card glass rounded-[36px] p-8">
@@ -763,7 +850,7 @@ img { display: block; }
             </div>
             <h3 class="display text-4xl font-medium leading-[1.02] tracking-[-0.02em] md:text-5xl">Designing for the North Window</h3>
             <p class="mt-6 max-w-xl text-sm font-medium leading-[1.7] text-[#f2ece1]/58">A study in daylight: how orientation, depth, and reveal shape the mood of a room from breakfast to last light — and why we plan the darkness too.</p>
-            <a href="#" class="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]">Read the essay <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+            <a href="/journal/designing-for-the-north-window" class="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]">Read the essay <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
           </article>
         </div>
       </div>
@@ -829,14 +916,53 @@ img { display: block; }
     <section id="contact" class="contact-section relative min-h-screen px-5 py-24 md:px-8 lg:px-12" aria-label="Contact">
       <div class="grid gap-14 md:grid-cols-12">
         <div class="contact-form md:col-span-4">
-          <p class="section-label mb-10">Begin a Conversation</p>
-          <div class="glass mb-5 flex w-full max-w-sm items-center justify-between rounded-[22px] px-5 py-4 text-sm font-medium text-[#f2ece1]/58">Select a project type <i data-lucide="chevron-down" class="h-4 w-4"></i></div>
-          <div class="mb-5 w-full max-w-sm border-b border-[#f2ece1]/10 py-5 text-sm font-medium text-[#f2ece1]/58">Reach us at <span class="text-[#f2ece1]">studio@atelierforma.com</span></div>
-          <div class="mb-10 w-full max-w-sm border-b border-[#f2ece1]/10 py-5 text-sm font-medium text-[#f2ece1]/58">Tell us about the space and the life you imagine within it.</div>
-          <p class="mb-8 max-w-72 text-sm font-medium leading-[1.75] text-[#f2ece1]/56">Ready to shape a home, a hotel, or a space that will outlast the moment?</p>
-          <a href="mailto:studio@atelierforma.com" class="magnetic-button inline-flex items-center gap-4 rounded-full border border-[#f2ece1]/14 px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em]">
-            Book <span class="rounded-full bg-[#b58a52] px-5 py-3 text-[#14110d]">Consultation</span>
-          </a>
+          <p class="section-label mb-8">Begin a Conversation</p>
+          <p class="mb-8 max-w-sm text-sm font-medium leading-[1.75] text-[#f2ece1]/70">Ready to shape a home, a hotel, or a space that will outlast the moment? Tell us about the project and the life you imagine within it.</p>
+
+          <form id="inquiry-form" class="max-w-sm" novalidate aria-describedby="form-status">
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="f-type">Project type</label>
+              <select id="f-type" name="projectType" required>
+                <option value="" disabled selected>Select a project type</option>
+                <option>Private Residence</option>
+                <option>Luxury Villa</option>
+                <option>Penthouse</option>
+                <option>Boutique Hotel</option>
+                <option>Restaurant</option>
+                <option>Corporate Office</option>
+                <option>Medical / Wellness</option>
+                <option>Retail</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-budget">Investment range</label>
+              <select id="f-budget" name="budget">
+                <option value="" disabled selected>Optional</option>
+                <option>Under €500k</option>
+                <option>€500k – €1M</option>
+                <option>€1M – €5M</option>
+                <option>€5M+</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message">Your project</label>
+              <textarea id="f-message" name="message" required placeholder="Location, scope, timeline, and what you hope the space will become."></textarea>
+            </div>
+            <button type="submit" class="magnetic-button inline-flex items-center gap-4 rounded-full border border-[#f2ece1]/14 px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em]">
+              Send <span class="rounded-full bg-[#b58a52] px-5 py-3 text-[#14110d]">Inquiry</span>
+            </button>
+            <p id="form-status" class="form-status mt-5" role="status" aria-live="polite"></p>
+          </form>
+
+          <p class="mt-8 max-w-sm border-t border-[#f2ece1]/10 pt-6 text-sm font-medium text-[#f2ece1]/60">Or write to us directly at <a href="mailto:studio@atelierforma.com" class="text-[#f2ece1] underline decoration-[#b58a52]/50 underline-offset-4 hover:decoration-[#b58a52]">studio@atelierforma.com</a></p>
         </div>
 
         <div class="faq-list md:col-span-7 md:col-start-6">
@@ -899,18 +1025,18 @@ img { display: block; }
           <div>
             <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#f2ece1]/36">Social</p>
             <div class="mt-6 space-y-4 text-sm font-semibold text-[#f2ece1]/72">
-              <a href="#" class="group flex items-center justify-between transition hover:text-[#f2ece1]">Instagram <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
-              <a href="#" class="group flex items-center justify-between transition hover:text-[#f2ece1]">LinkedIn <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
-              <a href="#" class="group flex items-center justify-between transition hover:text-[#f2ece1]">Pinterest <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
+              <a href="https://www.instagram.com/atelierforma" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between transition hover:text-[#f2ece1]">Instagram <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
+              <a href="https://www.linkedin.com/company/atelierforma" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between transition hover:text-[#f2ece1]">LinkedIn <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
+              <a href="https://www.pinterest.com/atelierforma" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between transition hover:text-[#f2ece1]">Pinterest <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
             </div>
           </div>
 
           <div>
             <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#f2ece1]/36">Legal</p>
             <div class="mt-6 space-y-3 text-sm font-semibold text-[#f2ece1]/50">
-              <a href="#" class="block transition hover:text-[#f2ece1]">Privacy Policy</a>
-              <a href="#" class="block transition hover:text-[#f2ece1]">Terms of Service</a>
-              <a href="#" class="block transition hover:text-[#f2ece1]">Press Kit</a>
+              <a href="/privacy" class="block transition hover:text-[#f2ece1]">Privacy Policy</a>
+              <a href="/terms" class="block transition hover:text-[#f2ece1]">Terms of Service</a>
+              <a href="mailto:press@atelierforma.com" class="block transition hover:text-[#f2ece1]">Press Kit</a>
             </div>
           </div>
         </div>
@@ -1250,6 +1376,49 @@ img { display: block; }
         item.style.transform = "scaleX(1)";
       });
     }
+  </script>
+
+  <script>
+    // Sticky header backdrop once scrolled (independent of motion prefs)
+    (function () {
+      const header = document.getElementById("site-header");
+      if (header) {
+        const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 40);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+      }
+    })();
+
+    // Accessible inquiry form — validates, then opens a pre-filled email (no backend required)
+    (function () {
+      const form = document.getElementById("inquiry-form");
+      if (!form) return;
+      const status = document.getElementById("form-status");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          status.className = "form-status err mt-5";
+          status.textContent = "Please complete the required fields.";
+          const firstInvalid = form.querySelector(":invalid");
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+        const data = new FormData(form);
+        const name = (data.get("name") || "").toString().trim();
+        const subject = encodeURIComponent("Project inquiry — " + name);
+        const body = encodeURIComponent(
+          "Name: " + name +
+          "\nEmail: " + (data.get("email") || "") +
+          "\nProject type: " + (data.get("projectType") || "") +
+          "\nInvestment range: " + (data.get("budget") || "Not specified") +
+          "\n\n" + (data.get("message") || "")
+        );
+        status.className = "form-status ok mt-5";
+        status.textContent = "Thank you, " + name + ". Opening your email client to send…";
+        window.location.href = "mailto:studio@atelierforma.com?subject=" + subject + "&body=" + body;
+        form.reset();
+      });
+    })();
   </script>
 
 </body>
