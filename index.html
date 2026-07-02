@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Primary SEO -->
+<title>Atelier Forma — Interior Architecture Studio | Architecture Begins Within</title>
+<meta name="description" content="Atelier Forma is a global interior architecture studio designing timeless residential, hospitality, cultural, and wellness environments through space, light, proportion, material, and craftsmanship.">
+<meta name="keywords" content="interior architecture, luxury interior design studio, residential architecture, hospitality design, boutique hotel design, penthouse interiors, material consulting, lighting design, bespoke millwork">
+<meta name="author" content="Atelier Forma">
+<meta name="theme-color" content="#14110d">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://www.atelierforma.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atelier Forma">
+<meta property="og:title" content="Atelier Forma — Interior Architecture Studio">
+<meta property="og:description" content="Timeless interior architecture where space, light, material, and craftsmanship become one experience. Residential, hospitality, cultural, and wellness environments worldwide.">
+<meta property="og:url" content="https://www.atelierforma.com/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A calm, light-filled interior architecture space by Atelier Forma">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atelier Forma — Interior Architecture Studio">
+<meta name="twitter:description" content="Timeless interior architecture where space, light, material, and craftsmanship become one experience.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80">
+
+<!-- Libraries (preserved from source template) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['Fraunces', 'Georgia', 'serif'],
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Atelier Forma",
+  "alternateName": "Atelier Forma Interior Architecture",
+  "description": "A global interior architecture studio designing timeless residential, hospitality, commercial, and wellness environments through architecture, light, proportion, material, and craftsmanship.",
+  "url": "https://www.atelierforma.com/",
+  "logo": "https://www.atelierforma.com/logo.svg",
+  "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+  "slogan": "Architecture Begins Within.",
+  "priceRange": "$$$$",
+  "areaServed": "Worldwide",
+  "knowsAbout": ["Interior Architecture", "Residential Design", "Hospitality Design", "Lighting Design", "Material Consulting", "Space Planning", "Bespoke Millwork"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via della Spiga 12",
+    "addressLocality": "Milan",
+    "addressCountry": "IT"
+  },
+  "founder": { "@type": "Person", "name": "Atelier Forma" },
+  "foundingDate": "2009",
+  "sameAs": [
+    "https://www.instagram.com/atelierforma",
+    "https://www.linkedin.com/company/atelierforma",
+    "https://www.pinterest.com/atelierforma"
+  ]
+}
+</script>
+<style>
+:root {
+  /* Warm luxury palette — Ivory · Stone · Concrete · Charcoal · Bronze · Oak · Deep Olive */
+  --bg: #14110d;
+  --panel: #1e1a14;
+  --panel-2: #241f18;
+  --cream: #f2ece1;         /* warm ivory */
+  --muted: rgba(242, 236, 225, 0.58);
+  --soft: rgba(242, 236, 225, 0.12);
+  --line: rgba(242, 236, 225, 0.10);
+  --bronze: #b58a52;        /* bronze / oak accent (replaces bright orange) */
+  --bronze-soft: rgba(181, 138, 82, 0.20);
+  --olive: #4a5238;         /* deep olive */
+  --oak: #c9a877;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+* { box-sizing: border-box; }
+html {
+  background: var(--bg);
+  color-scheme: dark;
+  scroll-behavior: auto;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 72% 8%, rgba(181, 138, 82, 0.14), transparent 36rem),
+    radial-gradient(circle at 12% 46%, rgba(242, 236, 225, 0.05), transparent 28rem),
+    radial-gradient(circle at 88% 88%, rgba(74, 82, 56, 0.10), transparent 30rem),
+    var(--bg);
+  color: var(--cream);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+::selection { background: var(--cream); color: var(--bg); }
+
+/* Editorial serif for display headlines */
+.font-serif { font-feature-settings: "liga" 1, "dlig" 1; }
+.display { font-family: 'Fraunces', Georgia, serif; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.noise {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .16;
+  background-image: radial-gradient(rgba(255,255,255,.14) 1px, transparent 1px);
+  background-size: 4px 4px;
+  mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+}
+.grid-veil {
+  position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .11;
+  background-image:
+    linear-gradient(rgba(242,236,225,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242,236,225,.08) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 84%, transparent);
+}
+.page-rail {
+  position: fixed; left: 22px; bottom: 28px; z-index: 45; pointer-events: none;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  color: rgba(242, 236, 225, .38);
+  font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+}
+.wordmark { letter-spacing: -0.035em; white-space: nowrap; }
+.nav-link { position: relative; text-transform: uppercase; letter-spacing: .06em; }
+.nav-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 1px;
+  transform: scaleX(0); transform-origin: right; background: currentColor;
+  transition: transform .45s var(--ease);
+}
+.nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+.section-label {
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(242,236,225,.56);
+}
+.section-label::before {
+  content: ""; width: 7px; height: 7px; border-radius: 999px;
+  background: var(--bronze); box-shadow: 0 0 20px rgba(181,138,82,.5);
+}
+.reveal, [data-reveal] {
+  opacity: 0; transform: translateY(32px); will-change: opacity, transform;
+}
+.hero-card {
+  transform-origin: center; will-change: transform;
+  border: 1px solid var(--line); box-shadow: 0 40px 120px rgba(0,0,0,.62);
+}
+.glass {
+  border: 1px solid var(--line);
+  background: rgba(242,236,225,.035);
+  backdrop-filter: blur(18px);
+}
+.magnetic-button {
+  transition: transform .45s var(--ease), background .45s var(--ease), border-color .45s var(--ease), color .45s var(--ease);
+}
+.magnetic-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(181,138,82,.5);
+  background: rgba(181,138,82,.12);
+}
+.service-card, .pricing-card, .note-card, .archive-card {
+  transition: transform .55s var(--ease), border-color .55s var(--ease), background .55s var(--ease);
+  will-change: transform, opacity;
+}
+.service-card:hover, .pricing-card:hover, .note-card:hover, .archive-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(181,138,82,.36);
+  background: rgba(242,236,225,.06);
+}
+.note-card::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: linear-gradient(135deg, rgba(242, 236, 225, 0.12), transparent 42%);
+  transition: opacity 500ms var(--ease);
+}
+.note-card:hover::after { opacity: 1; }
+.masked-number {
+  color: transparent; background-image: var(--number-image);
+  background-position: 50% 50%; background-size: 118%;
+  -webkit-background-clip: text; background-clip: text;
+  filter: saturate(.72) brightness(1.02) sepia(.12);
+  will-change: transform, background-position;
+}
+.strip-image, .archive-card img { will-change: transform; transform: scale(1.08); }
+.archive-card:hover img { transform: scale(1.16); opacity: 0.98; }
+.parallax-image {
+  position: absolute; overflow: hidden; border: 1px solid var(--line);
+  background: #17140f; opacity: .72; will-change: transform;
+}
+.parallax-image img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(.78) brightness(.74) sepia(.08); transform: scale(1.14); will-change: transform;
+}
+.timeline-bar {
+  transform: scaleX(0); transform-origin: left center;
+  background: linear-gradient(90deg, var(--bronze), rgba(242,236,225,.82));
+}
+.footer-input { transition: border-color .35s var(--ease), background .35s var(--ease); }
+.footer-input:hover { border-color: rgba(181,138,82,.35); background: rgba(242,236,225,.06); }
+
+/* Brand preloader */
+.ax-loader {
+  position: fixed; inset: 0; z-index: 200; display: flex; align-items: center;
+  justify-content: center; background: var(--bg); will-change: transform;
+}
+.ax-loader__inner {
+  display: flex; flex-direction: column; align-items: center; gap: 26px; padding: 0 24px;
+}
+.ax-loader__brand {
+  display: inline-flex; align-items: baseline; line-height: 1;
+  font-family: 'Fraunces', Georgia, serif; font-weight: 500; letter-spacing: -0.02em;
+  color: var(--cream); font-size: clamp(2.4rem, 8vw, 5.4rem);
+  opacity: 0; transform: translateY(18px); filter: blur(10px);
+  will-change: transform, opacity, filter;
+}
+.ax-dot {
+  width: 0.12em; height: 0.12em; margin-left: 0.16em; border-radius: 999px;
+  background: var(--bronze); box-shadow: 0 0 28px rgba(181, 138, 82, 0.65);
+  align-self: center;
+}
+.ax-loader__track {
+  width: min(300px, 64vw); height: 2px; overflow: hidden; border-radius: 999px;
+  background: rgba(242, 236, 225, 0.12);
+}
+.ax-loader__bar {
+  width: 100%; height: 100%; transform: scaleX(0); transform-origin: left center;
+  border-radius: 999px; background: linear-gradient(90deg, var(--bronze), rgba(242, 236, 225, 0.82));
+}
+.ax-loader__meta {
+  display: flex; justify-content: space-between; width: min(300px, 64vw);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(242, 236, 225, 0.45); opacity: 0;
+}
+@media (max-width: 767px) {
+  .wordmark { letter-spacing: -0.03em; }
+  .page-rail { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important; transition-duration: .001ms !important;
+  }
+  .ax-loader { display: none; }
+  .reveal, [data-reveal], .timeline-bar { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="grid-veil" aria-hidden="true"></div>
+  <div class="page-rail" aria-hidden="true">Atelier Forma / Interior Architecture</div>
+
+  <div id="ax-loader" class="ax-loader" aria-hidden="true">
+    <div class="ax-loader__inner">
+      <div class="ax-loader__brand">
+        <span>Atelier Forma</span><span class="ax-dot"></span>
+      </div>
+      <div class="ax-loader__track">
+        <div class="ax-loader__bar"></div>
+      </div>
+      <div class="ax-loader__meta">
+        <span class="ax-loader__pct">000</span>
+        <span>Architecture Begins Within</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-5 md:px-8 lg:px-12">
+    <a href="#home" class="display text-xl font-medium tracking-[-0.02em] text-[#f2ece1] md:text-2xl">
+      Atelier&nbsp;Forma
+    </a>
+
+    <nav class="hidden items-center gap-10 text-xs font-semibold text-[#f2ece1]/82 md:flex" aria-label="Primary">
+      <a href="#work" class="nav-link"><span class="mr-4 inline-block h-1.5 w-1.5 rounded-full bg-[#b58a52] align-middle"></span>Projects</a>
+      <a href="#studio" class="nav-link">Philosophy</a>
+      <a href="#materials" class="nav-link">Materials</a>
+      <a href="#journal" class="nav-link">Journal</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <button class="glass flex h-10 w-10 items-center justify-center rounded-full md:hidden" aria-label="Open menu">
+      <i data-lucide="menu" class="h-4 w-4"></i>
+    </button>
+  </header>
+
+  <main id="home" class="relative z-10 overflow-hidden">
+
+    <h1 class="sr-only">Atelier Forma — Global Interior Architecture Studio. Architecture Begins Within.</h1>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero-section relative flex min-h-screen items-center overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Introduction">
+      <div class="hero-copy relative z-20 max-w-[380px]">
+        <p class="section-label mb-10">Atelier Forma — Interior Architecture</p>
+        <p class="display max-w-[360px] text-[26px] font-normal leading-[1.32] tracking-[-0.01em] text-[#f2ece1]/80 md:text-[31px]">
+          <span class="text-[#f2ece1]">Architecture begins within.</span> We compose timeless interiors where space, light, material, and craftsmanship become one continuous experience.
+        </p>
+
+        <div class="mt-12 flex flex-wrap items-center gap-4">
+          <a href="#work" class="magnetic-button inline-flex items-center gap-4 rounded-full border border-[#f2ece1]/14 px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#f2ece1]">
+            View Projects
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#b58a52] text-[#14110d]">
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </span>
+          </a>
+          <a href="#contact" class="magnetic-button inline-flex items-center rounded-full border border-[#f2ece1]/14 px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/78">
+            Start Your Project
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-stack absolute left-1/2 top-[48%] z-10 h-[430px] w-[310px] -translate-x-1/2 -translate-y-1/2 md:h-[560px] md:w-[430px] lg:h-[620px] lg:w-[480px]" aria-hidden="true">
+        <div class="hero-card absolute inset-0 -translate-x-20 translate-y-12 -rotate-[17deg] rounded-[20px] bg-[#241f18]">
+          <div class="h-full w-full rounded-[20px] bg-gradient-to-br from-[#b58a52]/30 via-transparent to-black"></div>
+        </div>
+
+        <div class="hero-card absolute inset-0 translate-x-20 translate-y-10 rotate-[13deg] rounded-[20px] bg-[#d8ccb6]">
+          <div class="display absolute right-10 top-20 text-[120px] font-medium text-[#4a5238]/70">F</div>
+          <div class="absolute bottom-12 left-10 h-32 w-32 rounded-full border border-black/15"></div>
+        </div>
+
+        <div class="hero-card absolute inset-0 translate-x-32 translate-y-20 rotate-[18deg] rounded-[20px] bg-[#0f0d0a]">
+          <div class="h-full w-full rounded-[20px] bg-[linear-gradient(135deg,rgba(242,236,225,.14),transparent_45%)]"></div>
+        </div>
+
+        <div class="hero-card absolute inset-0 rotate-[4deg] overflow-hidden rounded-[20px] bg-[#1c150f]">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="A light-filled residential interior with warm timber and stone, designed by Atelier Forma" class="h-full w-full object-cover" style="filter:saturate(.9) brightness(.98)">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10"></div>
+        </div>
+
+        <button class="hero-cta absolute right-[-22px] top-1/2 z-20 flex h-16 w-16 -translate-y-1/2 items-center justify-center rounded-full border border-white/18 bg-black/75 text-white shadow-2xl backdrop-blur transition duration-300 hover:scale-110 hover:bg-[#b58a52]" aria-label="Explore projects" onclick="location.href='#work'">
+          <i data-lucide="arrow-right" class="h-7 w-7"></i>
+        </button>
+      </div>
+
+      <div class="hero-wordmark wordmark display pointer-events-none absolute -bottom-4 left-2 z-0 select-none text-[26vw] font-medium leading-none text-[#e9e0d2] md:-bottom-10 lg:left-6 lg:text-[22vw]" aria-hidden="true">
+        Forma
+      </div>
+
+      <div class="hero-meta glass absolute bottom-10 right-5 z-20 hidden w-[280px] rounded-[24px] p-6 md:right-8 lg:block">
+        <div class="mb-8 text-2xl text-[#b58a52]">✳</div>
+        <p class="display text-[21px] leading-[1.28] tracking-[-0.01em]">
+          Residential, hospitality, cultural, and wellness environments.
+        </p>
+        <div class="mt-10 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/45">
+          <span>Milan · Global Atelier</span>
+          <span class="h-1 w-1 rounded-full bg-[#b58a52]"></span>
+          <span>Est. 2009</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ STUDIO PHILOSOPHY ═══════════ -->
+    <section id="studio" class="brand-section relative flex min-h-screen items-center overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Studio philosophy">
+      <h2 class="brand-drift wordmark display pointer-events-none absolute -top-16 left-0 text-[6rem] font-medium leading-none text-[#f2ece1]/10 sm:text-[9rem] md:text-[13rem] lg:text-[17rem]" aria-hidden="true">
+        Philosophy
+      </h2>
+
+      <div class="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-12">
+        <div class="md:col-span-4">
+          <p class="section-label">Studio Philosophy</p>
+          <p data-reveal="" class="mt-8 max-w-sm text-sm font-medium leading-[1.75] text-[#f2ece1]/60">
+            We believe a room is not decorated — it is composed. Every project begins with the architecture of experience: how light enters, how proportion settles the body, how a material ages beautifully across decades. Restraint is our discipline; permanence is our measure.
+          </p>
+          <p data-reveal="" class="mt-6 max-w-sm text-sm font-medium leading-[1.75] text-[#f2ece1]/50">
+            The result is quiet, enduring, and unmistakably human — architecture that feels inevitable.
+          </p>
+        </div>
+
+        <div class="brand-words grid gap-6 md:col-span-7 md:col-start-6">
+          <p class="brand-word display text-6xl font-medium tracking-[-0.02em] md:text-8xl">Space</p>
+          <p class="brand-word display text-right text-6xl font-medium tracking-[-0.02em] md:text-8xl">Light</p>
+          <p class="brand-word display text-6xl font-medium tracking-[-0.02em] md:text-8xl">Material.</p>
+          <p class="brand-word display text-right text-6xl font-medium tracking-[-0.02em] md:text-8xl">Proportion</p>
+          <p class="brand-word display text-6xl font-medium tracking-[-0.02em] md:text-8xl">Craft</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SERVICES ═══════════ -->
+    <section id="services" class="services-section relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Services">
+      <div class="absolute left-1/2 top-0 h-[360px] w-[78%] -translate-x-1/2 overflow-hidden rounded-b-[32px] border-x border-b border-[#f2ece1]/10 md:h-[480px] lg:h-[600px]">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80" alt="Concrete and glass architectural volume in natural light" class="strip-image h-full w-full object-cover object-center opacity-70">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#14110d]/20 to-[#14110d]"></div>
+      </div>
+
+      <div class="grid min-h-screen items-center gap-14 md:grid-cols-12">
+        <div data-reveal="" class="md:col-span-3">
+          <p class="section-label mb-20">Practice</p>
+          <p class="max-w-60 text-sm font-medium leading-[1.75] text-[#f2ece1]/60">
+            A single studio for the full arc of a space — from the first sketch of light to the final piece of commissioned furniture.
+          </p>
+        </div>
+
+        <div class="md:col-span-6 md:col-start-4">
+          <p class="services-copy display text-4xl font-medium leading-[1.02] tracking-[-0.02em] md:text-6xl lg:text-[68px]">
+            We shape interior architecture as one continuous idea.
+          </p>
+
+          <div class="mt-10 grid gap-3 sm:grid-cols-2">
+            <div class="service-card glass rounded-[28px] p-6">
+              <p class="mb-14 text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/44">01</p>
+              <h3 class="display text-2xl font-medium tracking-[-0.01em]">Interior Architecture</h3>
+              <p class="mt-4 text-sm leading-[1.6] text-[#f2ece1]/56">Structure, circulation, and proportion resolved before a single surface is chosen.</p>
+            </div>
+            <div class="service-card glass rounded-[28px] p-6">
+              <p class="mb-14 text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/44">02</p>
+              <h3 class="display text-2xl font-medium tracking-[-0.01em]">Lighting Design</h3>
+              <p class="mt-4 text-sm leading-[1.6] text-[#f2ece1]/56">Daylight and shadow choreographed so a room changes gracefully from dawn to dusk.</p>
+            </div>
+            <div class="service-card glass rounded-[28px] p-6">
+              <p class="mb-14 text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/44">03</p>
+              <h3 class="display text-2xl font-medium tracking-[-0.01em]">Material Direction</h3>
+              <p class="mt-4 text-sm leading-[1.6] text-[#f2ece1]/56">Stone, timber, and bronze selected for how they will feel and weather over a lifetime.</p>
+            </div>
+            <div class="service-card glass rounded-[28px] p-6">
+              <p class="mb-14 text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/44">04</p>
+              <h3 class="display text-2xl font-medium tracking-[-0.01em]">Bespoke Millwork</h3>
+              <p class="mt-4 text-sm leading-[1.6] text-[#f2ece1]/56">Furniture and joinery drawn for the room and made by hand with our ateliers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal="" class="md:col-span-2 md:col-start-11">
+          <p class="mb-6 text-xs font-semibold uppercase tracking-[0.14em]">Full Scope <span aria-hidden="true">→</span></p>
+          <p class="max-w-60 text-sm font-medium leading-[1.75] text-[#f2ece1]/56">
+            One team carries a project from concept to completion — nothing is subcontracted to chance.
+          </p>
+        </div>
+      </div>
+
+      <!-- Full services index -->
+      <div data-reveal="" class="mx-auto mt-10 grid max-w-6xl gap-x-8 gap-y-3 border-t border-[#f2ece1]/12 pt-10 sm:grid-cols-2 md:grid-cols-4">
+        <p class="text-sm font-medium text-[#f2ece1]/70">Luxury Residential</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Hospitality Design</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Commercial Interiors</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Workspace Design</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Healthcare &amp; Wellness</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Retail Environments</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Space Planning</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Furniture Design</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Material Consulting</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Construction Documentation</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Site Supervision</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Project Management</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Custom Millwork</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Styling &amp; Curation</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Lighting Strategy</p>
+        <p class="text-sm font-medium text-[#f2ece1]/70">Sustainability</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ AWARDS & RECOGNITION ═══════════ -->
+    <section id="awards" class="numbers-intro relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Awards and recognition">
+      <figure class="parallax-image parallax-slow pointer-events-none right-4 top-32 h-28 w-40 rotate-[7deg] md:right-8 md:top-28 md:h-48 md:w-72">
+        <img src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?auto=format&fit=crop&w=1200&q=80" alt="Architectural detail of a concrete stair">
+      </figure>
+
+      <figure class="parallax-image parallax-fast pointer-events-none bottom-24 left-4 h-24 w-36 rotate-[-9deg] md:bottom-20 md:left-10 md:h-40 md:w-60">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" alt="Sculptural concrete architecture in daylight">
+      </figure>
+
+      <div class="grid min-h-screen items-center gap-12 md:grid-cols-12">
+        <div data-reveal="" class="md:col-span-3">
+          <p class="section-label mb-8">Recognition</p>
+          <p class="max-w-72 text-sm font-medium leading-[1.75] text-[#f2ece1]/60">
+            Our work is recognised internationally and published widely — though our truest measure is a space that still feels right a decade after handover.
+          </p>
+          <a href="#journal" class="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em]">Read the journal <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+        </div>
+
+        <div data-reveal="" class="md:col-span-5 md:col-start-5">
+          <h2 class="display text-6xl font-medium leading-[0.98] tracking-[-0.02em] md:text-8xl lg:text-[128px]">Awards<br>&amp; Press</h2>
+        </div>
+
+        <div class="stat-grid md:col-span-3 md:col-start-10">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="note-card glass rounded-[24px] p-5"><p class="display text-5xl font-medium tracking-[-0.02em]">40+</p><p class="mt-6 text-xs font-medium text-[#f2ece1]/50">completed environments</p></div>
+            <div class="note-card glass rounded-[24px] p-5"><p class="display text-5xl font-medium tracking-[-0.02em]">14</p><p class="mt-6 text-xs font-medium text-[#f2ece1]/50">design distinctions</p></div>
+            <div class="note-card glass rounded-[24px] p-5"><p class="display text-5xl font-medium tracking-[-0.02em]">09</p><p class="mt-6 text-xs font-medium text-[#f2ece1]/50">countries realised</p></div>
+            <div class="note-card glass rounded-[24px] p-5"><p class="display text-5xl font-medium tracking-[-0.02em]">15</p><p class="mt-6 text-xs font-medium text-[#f2ece1]/50">years of practice</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FEATURED PROJECTS ═══════════ -->
+    <section id="projects" class="archive-scroll-section relative overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Featured projects">
+      <div class="mx-auto grid max-w-6xl gap-12 md:grid-cols-12">
+        <div class="md:col-span-3">
+          <p class="section-label">Selected Work</p>
+          <p class="mt-8 max-w-64 text-sm font-medium leading-[1.75] text-[#f2ece1]/60">
+            Residences, retreats, and cultural spaces — each realised as a singular response to place, light, and the people who live within it.
+          </p>
+        </div>
+
+        <div class="md:col-span-8 md:col-start-5">
+          <h2 class="archive-title display text-[54px] font-medium leading-[0.98] tracking-[-0.02em] text-[#f2ece1] md:text-[86px] lg:text-[104px]">
+            Environments composed to outlast every trend.
+          </h2>
+        </div>
+      </div>
+
+      <div class="archive-gallery mt-20 flex gap-5 will-change-transform">
+        <figure class="archive-card group relative h-[420px] w-[320px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[560px] md:w-[420px]">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Villa Serena — a serene living room in oak and travertine" class="h-full w-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <figcaption class="absolute bottom-6 left-6 right-6">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Private Residence · Como, Italy</p>
+            <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Villa Serena</h3>
+            <p class="mt-1 text-xs text-[#f2ece1]/55">2023 · 640 m² · Oak, Travertine</p>
+          </figcaption>
+        </figure>
+
+        <figure class="archive-card group relative mt-20 h-[360px] w-[300px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[460px] md:w-[360px]">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Penthouse Aria — a sculptural bedroom framed in stone" class="h-full w-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <figcaption class="absolute bottom-6 left-6 right-6">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Penthouse · Milan, Italy</p>
+            <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Penthouse Aria</h3>
+            <p class="mt-1 text-xs text-[#f2ece1]/55">2022 · 410 m² · Marble, Bronze</p>
+          </figcaption>
+        </figure>
+
+        <figure class="archive-card group relative h-[420px] w-[320px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[560px] md:w-[420px]">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Maison Lumière — a boutique hotel lobby in concrete and warm light" class="h-full w-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <figcaption class="absolute bottom-6 left-6 right-6">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Boutique Hotel · Kyoto, Japan</p>
+            <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Maison Lumière</h3>
+            <p class="mt-1 text-xs text-[#f2ece1]/55">2024 · 2,100 m² · Concrete, Cedar</p>
+          </figcaption>
+        </figure>
+
+        <figure class="archive-card group relative mt-28 h-[360px] w-[300px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[460px] md:w-[360px]">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80" alt="Casa Oliva — a luxury villa opening onto a reflecting pool" class="h-full w-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <figcaption class="absolute bottom-6 left-6 right-6">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Luxury Villa · Ibiza, Spain</p>
+            <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Casa Oliva</h3>
+            <p class="mt-1 text-xs text-[#f2ece1]/55">2023 · 880 m² · Limestone, Olive Wood</p>
+          </figcaption>
+        </figure>
+
+        <figure class="archive-card group relative h-[420px] w-[320px] shrink-0 overflow-hidden rounded-[34px] border border-[#f2ece1]/10 bg-[#17140f] md:h-[560px] md:w-[420px]">
+          <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=80" alt="Restaurant Cor — an intimate dining room in charcoal and brass" class="h-full w-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-transparent to-transparent"></div>
+          <figcaption class="absolute bottom-6 left-6 right-6">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/60">Restaurant · Copenhagen, Denmark</p>
+            <h3 class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Restaurant Cor</h3>
+            <p class="mt-1 text-xs text-[#f2ece1]/55">2021 · 320 m² · Charcoal Oak, Brass</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ═══════════ SIGNATURE WORK ═══════════ -->
+    <section id="work" class="work-section relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Body of work">
+      <div class="grid min-h-screen items-center gap-12 md:grid-cols-12">
+        <div class="work-copy md:col-span-3">
+          <p class="section-label mb-8">Body of Work</p>
+          <h2 class="display text-5xl font-medium leading-[1.0] tracking-[-0.02em] md:text-6xl">Forty rooms. One discipline.</h2>
+          <p class="mt-6 max-w-72 text-sm font-medium leading-[1.75] text-[#f2ece1]/56">
+            Across residences, hotels, restaurants, and workplaces, the method never changes: read the site, honour the light, and let material do the speaking.
+          </p>
+          <a href="#contact" class="magnetic-button mt-8 inline-flex rounded-full border border-[#f2ece1]/14 px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em]">Commission the studio</a>
+        </div>
+
+        <div class="relative md:col-span-7 md:col-start-4">
+          <div class="relative flex min-h-[520px] items-center justify-center">
+            <span class="masked-number display text-[13rem] font-medium leading-none tracking-[-0.03em] md:text-[24rem] lg:text-[28rem]" style="--number-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&amp;fit=crop&amp;w=1600&amp;q=90')">40</span>
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" alt="Interior detail of a warm minimal kitchen" class="project-card absolute left-0 top-14 hidden h-44 w-72 rotate-[-14deg] rounded-[18px] border border-[#f2ece1]/10 object-cover md:block">
+            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80" alt="A modern home at dusk with warm interior light" class="project-card absolute right-4 top-6 hidden h-44 w-72 rotate-[10deg] rounded-[18px] border border-[#f2ece1]/10 object-cover md:block">
+          </div>
+        </div>
+
+        <div data-reveal="" class="md:col-span-2">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]/62">Typologies</p>
+          <p class="mt-8 text-sm font-medium leading-[1.75] text-[#f2ece1]/50">Residences, Villas, Penthouses, Hotels, Restaurants, Offices, Clinics, Retail</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ MATERIALS ═══════════ -->
+    <section id="materials" class="partners-section relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Materials">
+      <h2 class="partners-heading wordmark display pointer-events-none absolute left-5 top-16 text-[18vw] font-medium leading-none tracking-[-0.03em] text-[#f2ece1]/[0.055] md:left-8 md:top-10 md:text-[15vw]" aria-hidden="true">
+        Materials
+      </h2>
+
+      <figure class="parallax-image parallax-slow pointer-events-none absolute right-5 top-28 hidden h-44 w-72 rotate-[5deg] overflow-hidden rounded-[28px] border border-[#f2ece1]/10 md:block lg:right-14 lg:h-56 lg:w-96">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" alt="Detail of a stone stair and timber handrail" class="h-full w-full object-cover">
+      </figure>
+
+      <div class="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center">
+        <div class="mb-16 grid gap-8 md:grid-cols-12">
+          <div class="md:col-span-3">
+            <p class="section-label">Materials</p>
+          </div>
+
+          <div class="md:col-span-7 md:col-start-5">
+            <h2 class="display text-[52px] font-medium leading-[0.98] tracking-[-0.02em] text-[#f2ece1] md:text-[84px] lg:text-[96px]">
+              We choose materials for how they will age, not how they photograph.
+            </h2>
+          </div>
+        </div>
+
+        <div class="partner-logos grid grid-cols-1 gap-5 md:grid-cols-12">
+          <article class="note-card group relative min-h-[430px] overflow-hidden rounded-[38px] border border-[#f2ece1]/10 bg-[#f2ece1] p-8 text-[#14110d] md:col-span-5">
+            <div class="display absolute -right-6 -top-10 text-[180px] font-medium leading-none tracking-[-0.03em] text-[#14110d]/[0.06]">01</div>
+            <div class="relative z-10 flex h-full flex-col justify-between">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#14110d]/45">01 / Stone</p>
+                <h3 class="display mt-12 max-w-sm text-[50px] font-medium leading-[0.94] tracking-[-0.02em] md:text-[62px]">Stone remembers time.</h3>
+              </div>
+              <p class="max-w-sm text-base font-medium leading-[1.55] text-[#14110d]/62">Marble, travertine, and limestone — quarried, honed, and laid to carry the weight of a room for generations.</p>
+            </div>
+          </article>
+
+          <article class="note-card group relative min-h-[430px] overflow-hidden rounded-[38px] border border-[#f2ece1]/10 bg-[#181410] md:col-span-4">
+            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80" alt="Warm timber and glass in a modern home" class="h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14110d] via-[#14110d]/25 to-transparent"></div>
+            <div class="absolute bottom-7 left-7 right-7">
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/55">02 / Timber</p>
+              <h3 class="display mt-4 text-[34px] font-medium leading-[0.98] tracking-[-0.02em] text-[#f2ece1]">Oak and walnut, warm to the hand.</h3>
+            </div>
+          </article>
+
+          <article class="note-card relative min-h-[430px] overflow-hidden rounded-[38px] border border-[#f2ece1]/10 bg-[#f2ece1]/[0.035] p-7 md:col-span-3">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/42">Palette</p>
+            <div class="mt-10 space-y-5">
+              <div class="border-b border-[#f2ece1]/10 pb-5"><p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/32">03</p><p class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Concrete</p></div>
+              <div class="border-b border-[#f2ece1]/10 pb-5"><p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/32">04</p><p class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Bronze</p></div>
+              <div><p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/32">05</p><p class="display mt-2 text-2xl font-medium tracking-[-0.01em]">Glass</p></div>
+            </div>
+            <div class="absolute bottom-7 left-7 right-7">
+              <p class="text-sm font-medium leading-[1.65] text-[#f2ece1]/56">Structure, patina, and clarity — the quiet counterpoints to stone and wood.</p>
+            </div>
+          </article>
+
+          <article class="note-card group relative overflow-hidden rounded-[38px] border border-[#f2ece1]/10 bg-[#100e0a] p-8 md:col-span-7">
+            <div class="absolute right-8 top-8 h-24 w-24 rounded-full border border-[#f2ece1]/10"></div>
+            <div class="absolute right-14 top-14 h-12 w-12 rounded-full border border-[#f2ece1]/10"></div>
+            <div class="relative z-10 grid gap-8 md:grid-cols-12">
+              <div class="md:col-span-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/42">06 / Metal &amp; Glass</p>
+              </div>
+              <div class="md:col-span-8">
+                <h3 class="display max-w-2xl text-[44px] font-medium leading-[0.98] tracking-[-0.02em] text-[#f2ece1] md:text-[60px]">Steel, bronze, and light.</h3>
+                <p class="mt-7 max-w-lg text-sm font-medium leading-[1.7] text-[#f2ece1]/56">Slim profiles and hand-finished metals frame the view without ever competing with it.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="note-card relative overflow-hidden rounded-[38px] border border-[#f2ece1]/10 bg-[#b58a52] p-8 text-[#14110d] md:col-span-5">
+            <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#14110d]/10"></div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#14110d]/55">07 / Natural Fabric</p>
+            <h3 class="display mt-12 max-w-sm text-[42px] font-medium leading-[0.96] tracking-[-0.02em] md:text-[54px]">Linen, wool, and touch.</h3>
+            <p class="mt-8 max-w-sm text-sm font-medium leading-[1.65] text-[#14110d]/62">The final layer — undyed, natural textiles that soften acoustics and invite the body to stay.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ DESIGN PROCESS ═══════════ -->
+    <section id="process" class="process-section relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12" aria-label="Design process">
+      <figure class="parallax-image parallax-slow pointer-events-none right-4 top-24 h-28 w-44 rotate-[4deg] md:right-8 md:top-20 md:h-56 md:w-80">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="A minimalist white residence at golden hour">
+      </figure>
+
+      <div data-reveal="" class="mb-16 max-w-2xl">
+        <p class="section-label mb-8">The Process</p>
+        <h2 class="display text-6xl font-medium leading-[1.0] tracking-[-0.02em] md:text-8xl">From first light<br>to final key.</h2>
+        <p class="mt-6 max-w-md text-sm font-medium leading-[1.75] text-[#f2ece1]/56">
+          A measured sequence that turns ambition into architecture — carried by one studio, without a handover in sight.
+        </p>
+      </div>
+
+      <div class="relative h-72 overflow-hidden rounded-[32px] border border-[#f2ece1]/10 bg-[#f2ece1]/[0.025]">
+        <div class="timeline-bar absolute left-0 top-10 h-7 w-1/4 rounded-r-full text-[#14110d]"><span class="ml-4 text-xs font-semibold leading-7">Discovery</span></div>
+        <div class="timeline-bar absolute left-[18%] top-24 h-7 w-1/4 rounded-r-full text-[#14110d]"><span class="ml-4 text-xs font-semibold leading-7">Concept</span></div>
+        <div class="timeline-bar absolute left-[36%] top-[9.5rem] h-7 w-1/3 rounded-r-full text-[#14110d]"><span class="ml-4 text-xs font-semibold leading-7">Development</span></div>
+        <div class="timeline-bar absolute left-[62%] top-52 h-7 w-1/3 rounded-r-full text-[#14110d]"><span class="ml-4 text-xs font-semibold leading-7">Delivery</span></div>
+        <div class="grid h-full grid-cols-4 divide-x divide-[#f2ece1]/10"></div>
+      </div>
+
+      <div class="process-columns mt-8 grid gap-4 md:grid-cols-4">
+        <div class="glass rounded-[28px] p-6"><h3 class="display text-2xl font-medium tracking-[-0.01em]">Discovery</h3><p class="mt-5 text-sm leading-[1.65] text-[#f2ece1]/56">Research, site study, and conversation. We learn the light, the climate, the routines of the people who will live here.</p></div>
+        <div class="glass rounded-[28px] p-6"><h3 class="display text-2xl font-medium tracking-[-0.01em]">Concept</h3><p class="mt-5 text-sm leading-[1.65] text-[#f2ece1]/56">Spatial planning, a lighting strategy, and the first material palette — the idea made legible before it is drawn in detail.</p></div>
+        <div class="glass rounded-[28px] p-6"><h3 class="display text-2xl font-medium tracking-[-0.01em]">Development</h3><p class="mt-5 text-sm leading-[1.65] text-[#f2ece1]/56">Design development, material selection, and full construction documentation — every joint and reveal resolved on paper.</p></div>
+        <div class="glass rounded-[28px] p-6"><h3 class="display text-2xl font-medium tracking-[-0.01em]">Delivery</h3><p class="mt-5 text-sm leading-[1.65] text-[#f2ece1]/56">Construction, site supervision, installation, and styling — through to completion and the day the doors first open.</p></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ JOURNAL ═══════════ -->
+    <section id="journal" class="pricing-section relative min-h-screen px-5 py-24 md:px-8 lg:px-12" aria-label="Journal">
+      <div class="grid gap-12 md:grid-cols-12">
+        <div class="pricing-copy md:col-span-4">
+          <p class="section-label mb-8">The Journal</p>
+          <h2 class="display text-6xl font-medium leading-[1.0] tracking-[-0.02em] md:text-8xl">The Journal</h2>
+          <p class="mt-6 max-w-72 text-sm font-medium leading-[1.75] text-[#f2ece1]/56">
+            Field notes on living well — writing on architecture, material studies, light, and the craft behind the rooms we make.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-2 max-w-xs">
+            <span class="rounded-full border border-[#f2ece1]/14 px-3 py-1 text-xs font-medium text-[#f2ece1]/62">Luxury Living</span>
+            <span class="rounded-full border border-[#f2ece1]/14 px-3 py-1 text-xs font-medium text-[#f2ece1]/62">Architecture</span>
+            <span class="rounded-full border border-[#f2ece1]/14 px-3 py-1 text-xs font-medium text-[#f2ece1]/62">Material Studies</span>
+            <span class="rounded-full border border-[#f2ece1]/14 px-3 py-1 text-xs font-medium text-[#f2ece1]/62">Lighting</span>
+            <span class="rounded-full border border-[#f2ece1]/14 px-3 py-1 text-xs font-medium text-[#f2ece1]/62">Craftsmanship</span>
+          </div>
+        </div>
+
+        <div class="pricing-list grid gap-5 md:col-span-7 md:col-start-6">
+          <article class="pricing-card glass rounded-[36px] p-8">
+            <div class="mb-8 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/50">
+              <span class="rounded-full bg-[#b58a52] px-3 py-1 text-[#14110d]">Material Studies</span>
+              <span>Issue 07</span>
+            </div>
+            <h3 class="display text-4xl font-medium leading-[1.02] tracking-[-0.02em] md:text-5xl">The Slow Patina of Bronze</h3>
+            <p class="mt-6 max-w-xl text-sm font-medium leading-[1.7] text-[#f2ece1]/58">Why we specify living metals that darken and warm with touch — and how a surface earns its character over the first ten years of use.</p>
+            <a href="#" class="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]">Read the essay <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+          </article>
+
+          <article class="pricing-card glass rounded-[36px] p-8">
+            <div class="mb-8 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/50">
+              <span class="rounded-full bg-[#4a5238] px-3 py-1 text-[#f2ece1]">Lighting</span>
+              <span>Issue 06</span>
+            </div>
+            <h3 class="display text-4xl font-medium leading-[1.02] tracking-[-0.02em] md:text-5xl">Designing for the North Window</h3>
+            <p class="mt-6 max-w-xl text-sm font-medium leading-[1.7] text-[#f2ece1]/58">A study in daylight: how orientation, depth, and reveal shape the mood of a room from breakfast to last light — and why we plan the darkness too.</p>
+            <a href="#" class="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]">Read the essay <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ OUR STUDIO ═══════════ -->
+    <section id="our-studio" class="relative px-5 py-24 md:px-8 lg:px-12" aria-label="Our studio">
+      <div class="mx-auto grid max-w-6xl gap-12 md:grid-cols-12">
+        <div data-reveal="" class="md:col-span-4">
+          <p class="section-label mb-8">Our Studio</p>
+          <h2 class="display text-5xl font-medium leading-[1.0] tracking-[-0.02em] md:text-6xl">A small studio, deliberately.</h2>
+        </div>
+        <div class="md:col-span-7 md:col-start-6">
+          <p data-reveal="" class="display text-2xl font-normal leading-[1.4] tracking-[-0.01em] text-[#f2ece1]/85 md:text-[28px]">
+            Founded in Milan in 2009, Atelier Forma keeps a deliberately small bench of architects, designers, and makers so that no project is ever handed off, and every room carries the same hand.
+          </p>
+          <div class="mt-12 grid gap-8 sm:grid-cols-3">
+            <div data-reveal="">
+              <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/45">Vision</p>
+              <p class="mt-4 text-sm font-medium leading-[1.7] text-[#f2ece1]/60">To make interiors that feel inevitable — calm, generous, and true to the life inside them.</p>
+            </div>
+            <div data-reveal="">
+              <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/45">Craft</p>
+              <p class="mt-4 text-sm font-medium leading-[1.7] text-[#f2ece1]/60">We work hand-in-hand with stonemasons, joiners, and metalworkers we have trusted for years.</p>
+            </div>
+            <div data-reveal="">
+              <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/45">Sustainability</p>
+              <p class="mt-4 text-sm font-medium leading-[1.7] text-[#f2ece1]/60">Longevity is our first sustainability. We build once, well, from materials meant to endure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TESTIMONIALS ═══════════ -->
+    <section id="testimonials" class="relative px-5 py-24 md:px-8 lg:px-12" aria-label="Testimonials">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-14 grid gap-8 md:grid-cols-12">
+          <div class="md:col-span-3"><p class="section-label">In Their Words</p></div>
+          <div class="md:col-span-8 md:col-start-5">
+            <h2 class="display text-[44px] font-medium leading-[1.0] tracking-[-0.02em] md:text-[68px]">Trusted by the people who live and build within our work.</h2>
+          </div>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-3">
+          <figure data-reveal="" class="glass rounded-[30px] p-8">
+            <blockquote class="display text-2xl font-normal leading-[1.35] tracking-[-0.01em] text-[#f2ece1]/90">"They designed the way we actually live. A year on, the house still surprises us with light."</blockquote>
+            <figcaption class="mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]/50">Private Homeowner · Lake Como</figcaption>
+          </figure>
+          <figure data-reveal="" class="glass rounded-[30px] p-8">
+            <blockquote class="display text-2xl font-normal leading-[1.35] tracking-[-0.01em] text-[#f2ece1]/90">"Precise, calm, and completely on brief. Our guests feel the difference before they can name it."</blockquote>
+            <figcaption class="mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]/50">Hospitality Group · Kyoto</figcaption>
+          </figure>
+          <figure data-reveal="" class="glass rounded-[30px] p-8">
+            <blockquote class="display text-2xl font-normal leading-[1.35] tracking-[-0.01em] text-[#f2ece1]/90">"Drawings you can build from and a studio that stays until the last detail is right."</blockquote>
+            <figcaption class="mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-[#f2ece1]/50">Developer · Milan</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACT ═══════════ -->
+    <section id="contact" class="contact-section relative min-h-screen px-5 py-24 md:px-8 lg:px-12" aria-label="Contact">
+      <div class="grid gap-14 md:grid-cols-12">
+        <div class="contact-form md:col-span-4">
+          <p class="section-label mb-10">Begin a Conversation</p>
+          <div class="glass mb-5 flex w-full max-w-sm items-center justify-between rounded-[22px] px-5 py-4 text-sm font-medium text-[#f2ece1]/58">Select a project type <i data-lucide="chevron-down" class="h-4 w-4"></i></div>
+          <div class="mb-5 w-full max-w-sm border-b border-[#f2ece1]/10 py-5 text-sm font-medium text-[#f2ece1]/58">Reach us at <span class="text-[#f2ece1]">studio@atelierforma.com</span></div>
+          <div class="mb-10 w-full max-w-sm border-b border-[#f2ece1]/10 py-5 text-sm font-medium text-[#f2ece1]/58">Tell us about the space and the life you imagine within it.</div>
+          <p class="mb-8 max-w-72 text-sm font-medium leading-[1.75] text-[#f2ece1]/56">Ready to shape a home, a hotel, or a space that will outlast the moment?</p>
+          <a href="mailto:studio@atelierforma.com" class="magnetic-button inline-flex items-center gap-4 rounded-full border border-[#f2ece1]/14 px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em]">
+            Book <span class="rounded-full bg-[#b58a52] px-5 py-3 text-[#14110d]">Consultation</span>
+          </a>
+        </div>
+
+        <div class="faq-list md:col-span-7 md:col-start-6">
+          <p class="mb-6 text-xs font-semibold uppercase tracking-[0.16em]">Common questions <span class="float-right" aria-hidden="true">✳</span></p>
+          <div class="faq-row border-t border-[#f2ece1]/10 py-9"><h2 class="display text-4xl font-medium tracking-[-0.02em] md:text-6xl">How does a project begin?</h2><p class="mt-5 max-w-2xl text-sm font-medium leading-[1.75] text-[#f2ece1]/56">With a private consultation. We visit the site, listen closely, and return with a considered scope that defines the environment we should create together.</p></div>
+          <div class="faq-row border-t border-[#f2ece1]/10 py-9"><h3 class="display text-3xl font-medium tracking-[-0.01em]">Do you work internationally?</h3><p class="mt-5 max-w-2xl text-sm font-medium leading-[1.75] text-[#f2ece1]/56">Yes. From our studios in Milan, New York, and Kyoto, we deliver residential, hospitality, and cultural projects across Europe, Asia, and the Americas.</p></div>
+          <div class="faq-row border-t border-[#f2ece1]/10 py-9"><h3 class="display text-3xl font-medium tracking-[-0.01em]">Do you handle construction?</h3><p class="mt-5 max-w-2xl text-sm font-medium leading-[1.75] text-[#f2ece1]/56">We carry a project from concept through full documentation, site supervision, and installation — staying present until the final piece is placed.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer id="footer" class="footer-section relative min-h-screen overflow-hidden px-5 py-24 md:px-8 lg:px-12">
+      <div class="grid gap-12 md:grid-cols-12">
+        <div class="md:col-span-3"><p class="section-label">Atelier Forma</p></div>
+        <div class="md:col-span-9"><h2 class="footer-wordmark wordmark display text-[4.4rem] font-medium leading-none sm:text-[7rem] md:text-[9.5rem] lg:text-[12rem]">Atelier Forma</h2></div>
+      </div>
+
+      <div class="absolute right-5 top-28 text-xs font-semibold uppercase tracking-[0.16em] text-[#f2ece1]/44 md:right-8">© 2009–26</div>
+
+      <div class="footer-links absolute bottom-16 left-5 right-5 grid gap-10 border-t border-[#f2ece1]/12 pt-10 md:left-8 md:right-8 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <p class="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#f2ece1]/36">Interior Architecture Studio / Est. 2009</p>
+          <h3 class="display max-w-xl text-[42px] font-medium leading-[0.98] tracking-[-0.02em] text-[#f2ece1] md:text-[62px] lg:text-[72px]">
+            Architecture begins within.
+          </h3>
+
+          <div class="mt-10 grid max-w-lg grid-cols-2 border-y border-[#f2ece1]/12 py-5">
+            <div>
+              <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/34">Studio</p>
+              <p class="mt-2 text-sm font-semibold text-[#f2ece1]/78">Atelier Forma</p>
+            </div>
+            <div>
+              <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f2ece1]/34">Discipline</p>
+              <p class="mt-2 text-sm font-semibold text-[#f2ece1]/78">Interior Architecture</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 md:col-start-7">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#f2ece1]/36">Studios</p>
+          <p class="mt-6 text-sm font-medium leading-[1.9] text-[#f2ece1]/58">
+            Via della Spiga 12, Milan<br>
+            54 Crosby Street, New York<br>
+            Gion, Kyoto
+          </p>
+
+          <a href="mailto:studio@atelierforma.com" class="group mt-8 flex items-center justify-between border-b border-[#f2ece1]/14 pb-4 text-sm font-semibold text-[#f2ece1] transition hover:border-[#f2ece1]/40">
+            studio@atelierforma.com
+            <span class="transition duration-300 group-hover:translate-x-2">→</span>
+          </a>
+
+          <a href="#journal" class="group mt-4 flex items-center justify-between border-b border-[#f2ece1]/14 pb-4 text-sm font-semibold text-[#f2ece1]/62 transition hover:border-[#f2ece1]/40 hover:text-[#f2ece1]">
+            Subscribe to the journal
+            <span class="transition duration-300 group-hover:translate-x-2">→</span>
+          </a>
+        </div>
+
+        <div class="grid gap-10 md:col-span-2 md:col-start-11">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#f2ece1]/36">Social</p>
+            <div class="mt-6 space-y-4 text-sm font-semibold text-[#f2ece1]/72">
+              <a href="#" class="group flex items-center justify-between transition hover:text-[#f2ece1]">Instagram <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
+              <a href="#" class="group flex items-center justify-between transition hover:text-[#f2ece1]">LinkedIn <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
+              <a href="#" class="group flex items-center justify-between transition hover:text-[#f2ece1]">Pinterest <span class="text-[#f2ece1]/28 transition group-hover:translate-x-1 group-hover:text-[#f2ece1]">↗</span></a>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#f2ece1]/36">Legal</p>
+            <div class="mt-6 space-y-3 text-sm font-semibold text-[#f2ece1]/50">
+              <a href="#" class="block transition hover:text-[#f2ece1]">Privacy Policy</a>
+              <a href="#" class="block transition hover:text-[#f2ece1]">Terms of Service</a>
+              <a href="#" class="block transition hover:text-[#f2ece1]">Press Kit</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-12">
+          <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-[#f2ece1]/12 pt-5">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f2ece1]/34">© 2009–2026 Atelier Forma</p>
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f2ece1]/34">Milan · New York · Kyoto / Global Atelier</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!prefersReducedMotion && window.gsap && window.ScrollTrigger && window.Lenis) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.defaults({ ease: "power3.out" });
+
+      const lenis = new Lenis({
+        duration: 1.15,
+        smoothWheel: true,
+        wheelMultiplier: 0.82,
+        touchMultiplier: 1.1
+      });
+
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+
+      // ---- On-load: brand preloader -> hero entrance ----
+      const axLoader = document.getElementById("ax-loader");
+
+      if (lenis && axLoader) {
+        lenis.stop();
+      }
+
+      const loadTl = gsap.timeline({ paused: true });
+
+      loadTl
+        .from("header", { y: -24, opacity: 0, duration: 0.75 })
+        .from(".hero-copy > *", { y: 28, opacity: 0, stagger: 0.09, duration: 0.8 }, "-=0.35")
+        .from(".hero-card", { y: 90, opacity: 0, rotate: 0, scale: 0.94, stagger: 0.08, duration: 1.05 }, "-=0.55")
+        .from(".hero-cta", { scale: 0, opacity: 0, duration: 0.6 }, "-=0.45")
+        .from(".hero-wordmark", { yPercent: 18, opacity: 0, duration: 1 }, "-=0.7")
+        .from(".hero-meta", { y: 24, opacity: 0, duration: 0.75 }, "-=0.65");
+
+      if (axLoader) {
+        const brandEl = axLoader.querySelector(".ax-loader__brand");
+        const barEl = axLoader.querySelector(".ax-loader__bar");
+        const metaEl = axLoader.querySelector(".ax-loader__meta");
+        const pctEl = axLoader.querySelector(".ax-loader__pct");
+        const counter = { v: 0 };
+
+        gsap.timeline({
+          defaults: { ease: "power3.out" },
+          onComplete() {
+            axLoader.remove();
+            lenis.start();
+            ScrollTrigger.refresh();
+          }
+        })
+          .to(brandEl, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.9, ease: "power2.out" }, 0)
+          .to(metaEl, { opacity: 1, duration: 0.6 }, 0.3)
+          .to(barEl, { scaleX: 1, duration: 1.1, ease: "power2.inOut" }, 0.2)
+          .to(counter, {
+            v: 100,
+            duration: 1.1,
+            ease: "power2.inOut",
+            onUpdate() {
+              pctEl.textContent = String(Math.round(counter.v)).padStart(3, "0");
+            }
+          }, 0.2)
+          .to([brandEl, metaEl], { opacity: 0, y: -20, filter: "blur(8px)", duration: 0.5, ease: "power2.in" }, "+=0.15")
+          .to(axLoader, { yPercent: -100, duration: 0.9, ease: "power4.inOut" }, "<0.1")
+          .add(() => { loadTl.play(); }, "<0.35");
+      } else {
+        loadTl.play();
+        lenis.start();
+      }
+
+      // Universal soft reveals
+      gsap.utils.toArray("[data-reveal], .reveal").forEach((item) => {
+        gsap.to(item, {
+          opacity: 1,
+          y: 0,
+          duration: .9,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 84%",
+            toggleActions: "play none none reverse"
+          }
+        });
+      });
+
+      // Hero pinned cinematic transformation
+      const hero = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero-section",
+          start: "top top",
+          end: "+=115%",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1
+        }
+      });
+
+      hero
+        .to(".hero-wordmark", { yPercent: -50, scale: 1.07, opacity: .86, duration: 1 }, 0)
+        .to(".hero-copy", { y: -60, opacity: .42, duration: 1 }, 0)
+        .to(".hero-meta", { y: -34, opacity: .72, duration: 1 }, 0)
+        .to(".hero-stack", { y: -70, scale: .94, duration: 1 }, 0)
+        .to(".hero-card:nth-child(1)", { x: -46, y: 34, rotate: -24, duration: 1 }, 0)
+        .to(".hero-card:nth-child(2)", { x: 42, y: -34, rotate: 20, duration: 1 }, 0)
+        .to(".hero-card:nth-child(3)", { x: 54, y: 22, rotate: 22, duration: 1 }, 0)
+        .to(".hero-card:nth-child(4)", { x: 8, y: 12, rotate: 0, duration: 1 }, 0);
+
+      // Studio philosophy pinned word rhythm
+      const brand = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".brand-section",
+          start: "top top",
+          end: "+=110%",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1
+        }
+      });
+
+      brand
+        .fromTo(".brand-drift", { xPercent: 4 }, { xPercent: -22, duration: 1 }, 0)
+        .fromTo(".brand-word", {
+          opacity: 0,
+          y: 80,
+          x: (i) => (i % 2 ? -90 : 90)
+        }, {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          stagger: .08,
+          duration: .6
+        }, .08)
+        .to(".brand-word", {
+          x: (i) => (i % 2 ? -34 : 34),
+          stagger: .04,
+          duration: .45
+        }, .64);
+
+      // Services reveal and image strip motion
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".services-section",
+          start: "top 65%",
+          end: "bottom 30%",
+          scrub: 1
+        }
+      })
+        .from(".services-copy", { y: 90, opacity: 0, duration: .35 })
+        .from(".service-card", { y: 42, opacity: 0, stagger: .08, duration: .45 }, .16)
+        .to(".strip-image", { xPercent: -14, scale: 1.22, duration: .8 }, 0);
+
+      // Parallax media
+      gsap.utils.toArray(".parallax-image").forEach((item) => {
+        const isFast = item.classList.contains("parallax-fast");
+        const section = item.closest("section");
+
+        gsap.fromTo(item, { y: isFast ? 90 : 50 }, {
+          y: isFast ? -120 : -70,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+
+        const img = item.querySelector("img");
+        if (img) {
+          gsap.fromTo(img, { scale: 1.18, yPercent: isFast ? -8 : -5 }, {
+            scale: 1.04,
+            yPercent: isFast ? 8 : 5,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true
+            }
+          });
+        }
+      });
+
+      // Stats stagger
+      gsap.from(".stat-grid .note-card", {
+        y: 52,
+        opacity: 0,
+        stagger: .08,
+        duration: .8,
+        scrollTrigger: {
+          trigger: ".numbers-intro",
+          start: "top 58%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Featured projects horizontal scroll
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".archive-scroll-section",
+          start: "top 75%",
+          end: "bottom 20%",
+          scrub: 1
+        }
+      })
+        .from(".archive-title", { y: 80, opacity: 0, duration: 0.45 }, 0)
+        .from(".archive-card", {
+          y: 100,
+          opacity: 0,
+          rotate: (i) => [-3, 2, -2, 3, -1][i],
+          stagger: 0.08,
+          duration: 0.65
+        }, 0.12)
+        .to(".archive-gallery", { xPercent: -18, duration: 1 }, 0.25)
+        .to(".archive-card img", { scale: 1.18, duration: 1 }, 0.25);
+
+      // Signature work pinned number
+      const work = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".work-section",
+          start: "top top",
+          end: "+=120%",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1
+        }
+      });
+
+      work
+        .from(".work-copy", { x: -80, opacity: 0, duration: .4 }, 0)
+        .fromTo(".masked-number", { scale: .82, y: 80, backgroundPosition: "50% 28%" }, { scale: 1.1, y: -50, backgroundPosition: "50% 74%", duration: 1 }, 0)
+        .from(".project-card", { y: 80, opacity: 0, rotate: 0, stagger: .1, duration: .4 }, .15)
+        .to(".project-card", { y: -40, x: (i) => (i ? 42 : -34), duration: .8 }, .45);
+
+      // Materials editorial
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".partners-section",
+          start: "top 72%",
+          end: "bottom 28%",
+          scrub: 1
+        }
+      })
+        .fromTo(".partners-heading", { yPercent: 10, opacity: 0.06 }, { yPercent: -16, opacity: 0.12, duration: 1 }, 0)
+        .from(".partners-section .section-label", { y: 24, opacity: 0, duration: 0.35 }, 0.08)
+        .from(".partners-section h2:not(.partners-heading)", { y: 70, opacity: 0, duration: 0.55 }, 0.12)
+        .from(".partner-logos .note-card", {
+          y: 100,
+          opacity: 0,
+          rotate: (i) => [-2, 2, -1, 1, -2][i],
+          stagger: 0.08,
+          duration: 0.7
+        }, 0.2)
+        .to(".partner-logos .note-card", {
+          y: (i) => [-24, 18, -12, 14, -18][i],
+          stagger: 0.04,
+          duration: 0.55
+        }, 0.62);
+
+      // Process timeline
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".process-section",
+          start: "top 60%",
+          end: "bottom 40%",
+          scrub: 1
+        }
+      })
+        .to(".timeline-bar", { scaleX: 1, stagger: .12, duration: .6 }, 0)
+        .from(".process-columns > div", { y: 38, opacity: 0, stagger: .08, duration: .45 }, .25);
+
+      // Journal pin on desktop only
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".pricing-section",
+          start: "top top",
+          end: "+=80%",
+          scrub: 1,
+          pin: window.innerWidth >= 768,
+          anticipatePin: 1
+        }
+      })
+        .from(".pricing-copy", { y: 50, opacity: 0, duration: .35 }, 0)
+        .from(".pricing-card", { x: 110, opacity: 0, stagger: .16, duration: .55 }, .12);
+
+      // Contact / footer
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top 62%",
+          end: "bottom 34%",
+          scrub: 1
+        }
+      })
+        .from(".contact-form > *", { y: 36, opacity: 0, stagger: .07, duration: .45 }, 0)
+        .from(".faq-row", { y: 38, opacity: 0, stagger: .08, duration: .45 }, .12);
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".footer-section",
+          start: "top 72%",
+          end: "bottom bottom",
+          scrub: 1
+        }
+      })
+        .fromTo(".footer-wordmark", { scale: 0.9, y: 120, opacity: 0.35 }, { scale: 1, y: 0, opacity: 1, duration: 0.9 }, 0)
+        .from(".footer-links", { y: 80, opacity: 0, duration: 0.5 }, 0.2)
+        .from(".footer-links h3", { y: 60, opacity: 0, letterSpacing: "-0.12em", duration: 0.45 }, 0.3)
+        .from(".footer-links a", { y: 18, opacity: 0, stagger: 0.04, duration: 0.3 }, 0.45);
+
+      window.addEventListener("load", () => ScrollTrigger.refresh());
+      window.addEventListener("resize", () => ScrollTrigger.refresh());
+
+    } else {
+      document.getElementById("ax-loader")?.remove();
+
+      document.querySelectorAll(".reveal, [data-reveal]").forEach((item) => {
+        item.style.opacity = "1";
+        item.style.transform = "none";
+      });
+
+      document.querySelectorAll(".timeline-bar").forEach((item) => {
+        item.style.transform = "scaleX(1)";
+      });
+    }
+  </script>
+
+</body>
+</html>
